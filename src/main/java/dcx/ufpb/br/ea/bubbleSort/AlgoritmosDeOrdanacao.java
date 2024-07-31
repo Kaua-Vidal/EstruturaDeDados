@@ -29,6 +29,33 @@ public class AlgoritmosDeOrdanacao {
         }
     }
 
+    public void selectionSort(){
+        int it;
+        int temp;
+        int posMenorInicial;
+        int posMenor;
+        int i;
+
+        for (it = 0; it<vetor.length - 1; it++){
+            posMenorInicial = it;
+            posMenor = it+1;
+            for (i = posMenorInicial + 1; i<vetor.length; i++){
+                if (vetor[i] < vetor[posMenor]){
+                    posMenor = i;
+                }
+            }
+            System.out.println("Menor elemento encontrado na Iteração está na posição "+posMenor);
+            if (vetor[posMenor] < vetor[posMenorInicial]){
+                //troca
+                temp = vetor[posMenorInicial];
+                vetor[posMenorInicial] = vetor[posMenor];
+                vetor[posMenor] = temp;
+            }
+            System.out.println("Iteracao "+it);
+            mostraVetor();
+        }
+    }
+
     public void mostraVetor(){
         for (int i=0; i<vetor.length;i++){
             System.out.print(vetor[i]+" ");
